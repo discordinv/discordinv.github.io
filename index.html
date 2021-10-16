@@ -32,6 +32,15 @@ result = "Invite Code: " + data.code + "<br>Server ID: " + data.guild.id + "<br>
 
 document.getElementById("serverinfo").innerHTML = result;
 document.getElementById("servericon").src = "https://cdn.discordapp.com/icons/" + data.guild.id + "/" + data.guild.icon + ".png";
+                
+                var link = document.querySelector("link[rel~='icon']");
+if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+link.href = "https://cdn.discordapp.com/icons/" + data.guild.id + "/" + data.guild.icon + ".png";
+                
 }
 
 function redirect(){
