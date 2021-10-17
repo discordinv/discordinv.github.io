@@ -37,10 +37,12 @@
          <button onclick="redirect()" style="border:none; border-radius:15px; height:35px; background-color:#5865F2; color:#ffffff; font-family:'Whitney'; width:175px; font-size:17px; cursor:pointer">Join Server</button>
             </div>
             <div class="flex-child">
+                <label style="font-family:'Whitney'; font-size:27px; color:#ffffff"><b>Invite Code</b></label><br>
+               <label style="font-family:'Whitney'; font-size:23px; color:#ffffff" id="code">Loading...</label><br><br><br>
                <br><br><label style="font-family:'Whitney'; font-size:27px; color:#ffffff"><b>Inviter</b></label><br>
-               <label style="font-family:'Whitney'; font-size:23px; color:#ffffff" id="invitetracker">Loading...</label><br><br>
+               <label style="font-family:'Whitney'; font-size:23px; color:#ffffff" id="invitetracker">Loading...</label><br><br><br>
                 <label style="font-family:'Whitney'; font-size:27px; color:#ffffff"><b>Expires At</b></label><br>
-               <label style="font-family:'Whitney'; font-size:23px; color:#ffffff" id="expire">Loading...</label><br><br>
+               <label style="font-family:'Whitney'; font-size:23px; color:#ffffff" id="expire">Loading...</label><br><br><br>
             </div>
         </div>
         <script>
@@ -98,6 +100,7 @@ result = "Invite Code: " + data.code + "<br>Server ID: " + data.guild.id + "<br>
 members = "<i class=\"fa fa-circle\" style=\"font-size:15px;color:#747F8D;vertical-align: middle;\"></i> " + data.approximate_member_count + " members" + "<br><i class=\"fa fa-circle\" style=\"font-size:15px;color:#57F287;vertical-align: middle;\"></i> " + data.approximate_presence_count + " online"
 document.getElementById("serverinfo").innerHTML = result;
 document.getElementById("members").innerHTML = members;
+document.getElementById("code").innerHTML = data.code;
 document.getElementById("invitetracker").innerHTML = inviter;
 document.getElementById("expire").innerHTML = expiredate;
 document.getElementById("servericon").src = "https://cdn.discordapp.com/icons/" + data.guild.id + "/" + data.guild.icon + ".png";
