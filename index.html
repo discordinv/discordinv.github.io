@@ -26,6 +26,10 @@
         </style>
     </head>
     <body style="background-color:#2C2F33" onload="getinfo()">
+        <div style="text-align:center">
+        <input onkeydown="searchfrominput()" id="searchbar" style="border:none; border-radius:5px;outline:none;background-color:#262626;color:white;font-family:'Ubuntu'; height:25px; width:300px;" placeholder="Search a user or UUID..." type="text">
+        <button onclick="search()" style="margin:5px;height:25px;cursor:pointer; width:40px;background-color:#262626; border-radius:5px; border:none"><i style="color:white" class="fa fa-search"></i></button>
+        </div>
         <div class="flex-container">
                         <div class="flex-child">
         <br><br> <label style="font-family:'Whitney'; font-size:27px; color:#ffffff"><b>Server ID</b></label><br>
