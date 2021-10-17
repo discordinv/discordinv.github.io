@@ -71,7 +71,7 @@ var data = await response.json();
                 }
                 else
                 {
-                    vanity = data.guild.vanity_url_code
+                    vanity = "discord.gg/" + data.guild.vanity_url_code
                 }
                 
                 let inviteinfo = data.inviter
