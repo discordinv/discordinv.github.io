@@ -31,7 +31,7 @@ document.getElementById("servername").innerHTML = "<b>" + data.guild.name + "</b
 result = "Invite Code: " + data.code + "<br>Server ID: " + data.guild.id + "<br><br>" + "<i class=\"fa fa-circle\" style=\"font-size:15px;color:#747F8D;vertical-align: middle;\"></i> " + data.approximate_member_count + " members" + "<br><i class=\"fa fa-circle\" style=\"font-size:15px;color:#57F287;vertical-align: middle;\"></i> " + data.approximate_presence_count + " online"
 
 document.getElementById("serverinfo").innerHTML = result;
-document.getElementById("servericon").src = "https://cdn.discordapp.com/icons/" + data.guild.id + "/" + data.guild.icon + ".png";
+document.getElementById("servericon").src = "https://cdn.discordapp.com/icons/" + data.guild.id + "/" + data.guild.icon + ".gif";
                 
                 var link = document.querySelector("link[rel~='icon']");
 if (!link) {
