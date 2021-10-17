@@ -27,11 +27,20 @@ var invite = segments[1];
 const response = await fetch("https://discord.com/api/v9/invites/" + invite + "?with_counts=true")
 var data = await response.json();
                 document.title = data.guild.name
+                let vanity = data.guild.vanity_url
+                if(vanity == null)
+                {
+                    vanity = "No vanity."
+                }
+                else
+                {
+                    vanity = data.guild.vanity_url
+                }
 document.getElementById("servername").innerHTML = "<b>" + data.guild.name + "</b>"
-result = "Invite Code: " + data.code + "<br>Server ID: " + data.guild.id + "<br><br>" + "<i class=\"fa fa-circle\" style=\"font-size:15px;color:#747F8D;vertical-align: middle;\"></i> " + data.approximate_member_count + " members" + "<br><i class=\"fa fa-circle\" style=\"font-size:15px;color:#57F287;vertical-align: middle;\"></i> " + data.approximate_presence_count + " online"
+result = "Invite Code: " + data.code + "<br>Server ID: " + data.guild.id + "<br>Vanity: " + vanity "<br><br>" + "<i class=\"fa fa-circle\" style=\"font-size:15px;color:#747F8D;vertical-align: middle;\"></i> " + data.approximate_member_count + " members" + "<br><i class=\"fa fa-circle\" style=\"font-size:15px;color:#57F287;vertical-align: middle;\"></i> " + data.approximate_presence_count + " online"
 
 document.getElementById("serverinfo").innerHTML = result;
-document.getElementById("servericon").src = "https://cdn.discordapp.com/icons/" + data.guild.id + "/" + data.guild.icon + ".gif";
+document.getElementById("servericon").src = "https://cdn.discordapp.com/icons/" + data.guild.id + "/" + data.guild.icon + ".png";
                 
                 var link = document.querySelector("link[rel~='icon']");
 if (!link) {
