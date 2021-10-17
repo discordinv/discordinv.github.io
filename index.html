@@ -28,7 +28,12 @@
     <body style="background-color:#2C2F33" onload="getinfo()">
         <div class="flex-container">
                         <div class="flex-child">
-        <label style="font-family:'Whitney'; font-size:20px; color:#ffffff" id="serverinfo">Loading...</label>
+        <br><br> <label style="font-family:'Whitney'; font-size:27px; color:#ffffff"><b>Server ID</b></label><br>
+               <label style="font-family:'Whitney'; font-size:23px; color:#ffffff" id="serverid">Loading...</label><br><br><br>
+               <label style="font-family:'Whitney'; font-size:27px; color:#ffffff"><b>Description</b></label><br>
+               <label style="font-family:'Whitney'; font-size:23px; color:#ffffff" id="description">Loading...</label><br><br><br>
+                <label style="font-family:'Whitney'; font-size:27px; color:#ffffff"><b>Vanity</b></label><br>
+               <label style="font-family:'Whitney'; font-size:23px; color:#ffffff" id="vanity">Loading...</label><br><br><br>
             </div>
              <div class="flex-child">
         <br><br><img style="border-radius:10px; width:175px; height:175px" id="servericon" src="example"><br><br>              
@@ -98,7 +103,9 @@ var data = await response.json();
 document.getElementById("servername").innerHTML = "<b>" + data.guild.name + "</b>"
 result = "Invite Code: " + data.code + "<br>Server ID: " + data.guild.id + "<br>Vanity: " + vanity
 members = "<i class=\"fa fa-circle\" style=\"font-size:15px;color:#747F8D;vertical-align: middle;\"></i> " + data.approximate_member_count + " members" + "<br><i class=\"fa fa-circle\" style=\"font-size:15px;color:#57F287;vertical-align: middle;\"></i> " + data.approximate_presence_count + " online"
-document.getElementById("serverinfo").innerHTML = result;
+document.getElementById("serverid").innerHTML = data.guild.id;
+document.getElementById("description").innerHTML = description;
+document.getElementById("vanity").innerHTML = vanity;
 document.getElementById("members").innerHTML = members;
 document.getElementById("code").innerHTML = data.code;
 document.getElementById("invitetracker").innerHTML = inviter;
